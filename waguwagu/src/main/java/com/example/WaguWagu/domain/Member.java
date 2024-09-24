@@ -36,6 +36,7 @@ public class Member {
     @Email
     private String email;
 
+    @Column(unique = true)
     private String phoneNumber;
 
     @Column(nullable = false)
