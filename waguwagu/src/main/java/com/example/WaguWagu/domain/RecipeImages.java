@@ -13,10 +13,18 @@ import lombok.NoArgsConstructor;
 @Builder
 public class RecipeImages {
     @Id
-    @Column(name = "ri_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int rImageId;
+    private Long pIdx;
 
-    private String imageFile;
+    @Column(nullable = false, length = 100)
+    private String pName;
+    @Column(nullable = false, columnDefinition = "tinyint DEFAULT 2")
+    private int pCover;
+
+    @Column(nullable = false)
+    private String pUrl;
+
+    @ManyToOne
+    private Recipe recipe;
 
 }

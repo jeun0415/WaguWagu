@@ -1,32 +1,29 @@
 package com.example.WaguWagu.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Getter
+@ToString
 public class Recipe {
 
     @Id
-    @Column(name = "r_id")
+    @Column(name = "r_idx")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long recipeId;
+    private Long rIdx;
 
-    @Column(name = "f_name", nullable = false)
-    private String foodName;
+    @Column(name = "r_name", nullable = false)
+    private String rName;
 
-    @Column(name = "c_type")
-    private String cuisineType;
+    private String rType;
+
+    @Column(nullable = false, columnDefinition = "TEXT")
+    private String rMethod;
 
     @Column(nullable = false)
-    private String instructions;
-
-    @Column(nullable = false)
-    private String ingredients;
+    private String rIngredient;
 }
