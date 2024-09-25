@@ -1,7 +1,6 @@
 package com.example.WaguWagu.error;
 
 import jakarta.validation.ConstraintViolationException;
-import lombok.Builder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
