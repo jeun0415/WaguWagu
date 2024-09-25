@@ -21,17 +21,17 @@ public class Comments {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long c_idx;     // 댓글ID
+    private Long commentIdx;     // 댓글ID
 
     @Column(length = 200)
-    private String c_content;       // 내용
+    private String commentContent;       // 내용
 
     @CreatedDate
     @Column(updatable = false)
-    private LocalDateTime c_reg_date;      // 작성시간
+    private LocalDateTime commentRegDate;      // 작성시간
 
     @LastModifiedDate
-    private LocalDateTime c_mod_date;       // 수정시간
+    private LocalDateTime commentModDate;       // 수정시간
 
     @ManyToOne
     private Board board;        // 게시글ID FK

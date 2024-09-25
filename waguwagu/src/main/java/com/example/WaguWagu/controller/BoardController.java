@@ -16,8 +16,8 @@ public class BoardController {
     private final BoardService boardService;
 
     // list page
-    @GetMapping("/list")
-    public
+//    @GetMapping("/list")
+//    public
 
 
     // input page
