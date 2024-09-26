@@ -1,11 +1,11 @@
 package com.example.WaguWagu.controller;
 
-import com.example.WaguWagu.service.BoardService;
+import com.example.WaguWagu.dto.BoardResponsePageDto;
+import com.example.WaguWagu.service.BoardServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("board")
@@ -13,11 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class BoardController {
 
-    private final BoardService boardService;
+    private final BoardServiceImpl boardServiceImpl;
 
     // list page
-//    @GetMapping("/list")
-//    public
+    @GetMapping("/list")
+    public ResponseEntity<BoardResponsePageDto> findAll(@RequestParam(name = "pageNum", defaultValue = "1") int pageNum,
+                                                        @RequestParam(name = "size", defaultValue = "15") int size){
+
+
+    }
 
 
     // input page
